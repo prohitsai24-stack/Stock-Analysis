@@ -1053,19 +1053,6 @@ if st.session_state["analysis_ready"]:
                                     file_name=f"{ticker}_trade_history.csv",
                                     mime="text/csv")
 
-            if open_position:
-                open_buy = buy_points.iloc[-1]
-                open_buy_date = open_buy.name
-                open_buy_price = open_buy["Close"]
-                current_price = data["Close"].iloc[-1]
-                unrealized_return = (current_price / open_buy_price) - 1
-
-                st.info(f"Open Position | "
-                        f"Buy Date: {open_buy_date.date()} | "
-                        f"Buy Price: {open_buy_price:.2f} | "
-                        f"Current Price: {current_price:.2f} | "
-                        f"Unrealized Return: {unrealized_return * 100:.2f}%")
-                    
 
 
             
