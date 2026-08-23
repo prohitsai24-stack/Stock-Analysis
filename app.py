@@ -199,10 +199,13 @@ if submitted:
         with st.spinner("Analysing..."):
             try:
                 data = get_stock_data(ticker, period)
-                info = get_stock_info(ticker)
             except Exception as e:
-                st.error("Unable to fetch stock data. Please try again.")
+                st.error("Unable to fetch stock price data : {e}")
                 st.stop()
+            try:
+                info = get_stock_info(ticker)
+            except Exception:
+                info = {}
 
             company_name = info.get("longName", ticker)
             sector = info.get("sector", "N/A")
