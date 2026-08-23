@@ -214,7 +214,9 @@ if submitted:
             market_cap = format_market_cap(market_cap)
 
             if data.empty:
-                st.error("No Stock Data Found")
+                st.error(f"No stock found for '{ticker}'. "
+                         "Please check the ticker symbol and try again.")
+                st.stop()
             else:
                 display_start_date = data.index[0]
                 extended_start_date = display_start_date - pd.Timedelta(days=400)
