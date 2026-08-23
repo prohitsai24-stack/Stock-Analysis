@@ -1,3 +1,7 @@
+## 🌐 Live Demo
+
+[Open the Stock Analysis Dashboard](https://rohit-stock-backtesting.streamlit.app)
+
 # 📈 Stock Analysis & Backtesting Dashboard
 
 An interactive stock analysis and trading-strategy backtesting dashboard built with **Python, Streamlit, Plotly, pandas, and yfinance**.
